@@ -1,5 +1,9 @@
 package br.edu.utfpr.dv.sireata.dao;
 
+import br.edu.utfpr.dv.sireata.dao.algorithms.CreateDAO;
+import br.edu.utfpr.dv.sireata.dao.algorithms.DeleteDAO;
+import br.edu.utfpr.dv.sireata.dao.algorithms.ReadDAO;
+import br.edu.utfpr.dv.sireata.dao.algorithms.UpdateDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,8 +14,15 @@ import java.util.List;
 
 import br.edu.utfpr.dv.sireata.model.Anexo;
 
-public class AnexoDAO {
-	
+public class AnexoDAO extends FullDAO{
+   
+    public AnexoDAO(CreateDAO create, ReadDAO read, UpdateDAO update, DeleteDAO delete) {       
+        this.create = create; //ok
+        this.read = read;
+        this.update = update;
+        this.delete = delete;
+    }
+	/*
 	public Anexo buscarPorId(int id) throws SQLException{
 		Connection conn = null;
 		PreparedStatement stmt = null;
@@ -69,7 +80,7 @@ public class AnexoDAO {
 				conn.close();
 		}
 	}
-	
+	/*
 	public int salvar(Anexo anexo) throws SQLException{
 		boolean insert = (anexo.getIdAnexo() == 0);
 		Connection conn = null;
@@ -113,8 +124,8 @@ public class AnexoDAO {
 			if((conn != null) && !conn.isClosed())
 				conn.close();
 		}
-	}
-	
+	}*/
+	/*
 	public void excluir(int id) throws SQLException{
 		Connection conn = null;
 		Statement stmt = null;
@@ -130,8 +141,8 @@ public class AnexoDAO {
 			if((conn != null) && !conn.isClosed())
 				conn.close();
 		}
-	}
-	
+	}*/
+	/*
 	private Anexo carregarObjeto(ResultSet rs) throws SQLException{
 		Anexo anexo = new Anexo();
 		
@@ -143,5 +154,5 @@ public class AnexoDAO {
 		
 		return anexo;
 	}
-
+*/
 }
